@@ -124,17 +124,18 @@ This search is expensive, in some candidates it can take seconds to complete. Fo
 Previous versions of the Solver were based entirely on LAHC. The algorithm struggled to pass levels 330+, and according to metadata it missed a LOT of solutions that I was able to recover with these tweaks.
 
 *Changes to LAHC algorithm:*
-1- Keep a history queue of the last N best APX. With a timer I keep track of the last improvement time and I reset the worker if too much time passed without a new best APX.
-2- LFA size is changed based on domain knowledge of the problem. The search space is so huge on early and mid game that the algorithm was wasting too much time on initial steps of the search. Early game in Number Shifting there is little interest on accepting a candidate with a RN much higher than last Accepted candidate. My approach was taking into account RN to calculate a coverage percentage. According to the coverage:
-- Coverage < 90%: LFA= 150
-- 90%..96%: LFA: linearly increase from 150 to 4600
-- \>96%: LFA:4600
 
-3- High LFA values doesn't explore enough the best candidates. With a lower LFA it does it much more often, but it's more prone to fall in local maximum.
-4- Due to 3, An Exhaustive Search is done on LFA timeouts if RN is low. This is an expensive step.
-5- Due to 3, LFA timeouts have a Backtrack/Flashback feature. It recovers a previous best APX from the history queue.
+1. Keep a history queue of the last N best APX. With a timer I keep track of the last improvement time and I reset the worker if too much time passed without a new best APX.
+2. LFA size is changed based on domain knowledge of the problem. The search space is so huge on early and mid game that the algorithm was wasting too much time on initial steps of the search. Early game in Number Shifting there is little interest on accepting a candidate with a RN much higher than last Accepted candidate. My approach was taking into account RN to calculate a coverage percentage. According to the coverage:
+  - Coverage < 90%: LFA= 150
+  - 90%..96%: LFA: linearly increase from 150 to 4600
+  - \>96%: LFA:4600
+
+3. High LFA values doesn't explore enough the best candidates. With a lower LFA it does it much more often, but it's more prone to fall in local maximum.
+4. Due to 3, An Exhaustive Search is done on LFA timeouts if RN is low. This is an expensive step.
+5. Due to 3, LFA timeouts have a Backtrack/Flashback feature. It recovers a previous best APX from the history queue.
 According to metadata many solutions needed up to 3 flashbacks to get the solution. This means LFA falls on a local optimum, it may be avoided with a bigger LFA size or mutators with more points, but convergence times went too high.
-6- With enough good APX the LAHC algorithm is switched to RN Explorer. RN Explorer have better better chances to find a valid solution.
+6. With enough good APX the LAHC algorithm is switched to RN Explorer. RN Explorer have better better chances to find a valid solution.
 
 
 ##### RN Explore Search Algorithm
@@ -150,7 +151,7 @@ Pseudocode: ```if (newBest.RN.isFullyContainedIn(GLOBAL_RN.APX[d][b].RN)) then r
 
 
 +Steps to search new candidates:
-1. -Change behaviour of LAHC Worker once RN_Explore have some approximations. With bad quality approximations (totalNumbers>=5) only change a couple of threads.
+1. Change behaviour of LAHC Worker once RN_Explore have some approximations. With bad quality approximations (totalNumbers>=5) only change a couple of threads.
 2. Once the RN Explore have high quality approximations (totalnumbers < 4) change more workers to the new search mode.
 3. Clone RN Explore on the local Worker, to avoid collisions and race conditions.
 4. Worker with ID=0 will run the function Mutate_Exhaustive_6() on those approximations that haven't done it, then it will mark this approximation as exhausted.
