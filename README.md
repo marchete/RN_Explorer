@@ -5,7 +5,7 @@ Evolution of https://github.com/marchete/Codingame/blob/master/Optimization/Numb
 
 About 300x-1000x performance improvement from previous Solvers.
 
-Solving time in milliseconds
+**Solving time in milliseconds**
 Level | Dancing Links | LAHC | LAHC + RN_Explorer
 ------------ | ------------ | ------------- | -------------
  225 | 6318000 | 490000 | 435
