@@ -24,13 +24,21 @@ Each move always removes a number. If the result of the operation is valued zero
 ##### Operations are noncommutative
 
 This is a key property of the puzzle. Order of the moves are important in the game. 
+
 Number shifting operation is defined as ```destValue = abs(destValue <sign> sourceValue)```
+
 Splitted in addition and subtraction:
+
 Addition: ```destValue = destValue+srcValue```
+
 Subtraction: ```destValue = abs(destValue-srcValue)```
+
 Example of noncommutative operations:
+
 ```3+1-4 = 0```
+
 ```3-4+1 = 2```
+
 This property leads to more complexity on the search. The solver not only needs to make a certain list of moves, but it needs to be executed in a correct order. As number of moves increase finding the correct order of movements become one of the main challenges of the puzzle.
 
 ##### Move definition
