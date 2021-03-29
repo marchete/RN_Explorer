@@ -163,6 +163,7 @@ Use this as lastAccepted on LAHC worker.
 
 RN Explore Solver were used on levels 200 to 600. Tests were performed on a single Corei7-8700K, using 10 Threads. Solving time per level is stored at https://github.com/marchete/RN_Explorer/blob/main/Solver_Performance_Data.txt . These times are C++ execution time, not including Python script time, connections to Codingame or other external processes. All 400 levels were solved in 10104 seconds (less than 3 hours of real execution time). Solving time for levels <300 are negligible, below 500ms. The final version of the solver needs several hundreds of milliseconds to just prepare the cache and the worker threads.
 Certain levels take much more time to solve, this is a graph with solving times per level.
+
 ![Performance Times](https://github.com/marchete/RN_Explorer/raw/main/img/PerformanceTime_200to600.PNG)
 
 Levels 515, 547 and 570 were orders of magnitude harder than others.
