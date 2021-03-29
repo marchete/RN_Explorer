@@ -25,7 +25,7 @@ python3 submit.py RN_ExploDiv_7 <THREADS> <LAHC_TIME_LIMIT> <LFA_SIZE> <K_A> <K_
 - <K_D>: Remaining Squared Points score.
 - <INC_TIME>: Increase Search time on milliseconds, after restarts. Like 50ms to allow more time if the level is hard. The code limit the max search time to 70sec.
 - <INC_LFA>: Increase LFA array on restarts. The code limit the Max LFA size to LFA_SIZE + 40*INC_LFA.
-- <RN_COUNT>: Defines how many workers will change from LAHC mode to RN_Explore mode. A value <= <THREADS>. I always use THREADS-1 or THREADS-2, leaving a worker always in LAHC mode.
+- <RN_COUNT>: Defines how many workers will change from LAHC mode to RN_Explore mode. A value <= \<THREADS>. I always use THREADS-1 or THREADS-2, leaving a worker always in LAHC mode.
 
 **Note:** There are a lot more of options and parameters inside the .cpp code. You have more parameters to tweak (probably more important than K_A..K_D) on lines 1491-1498 and 138-169.
 Constant value *MIN_DEGREE_TOINSERT* defines at what amount of Remaining Numbers a Worker changes from LAHC to RN_Explorer. It can be anything from 3 to MAX_NUMBERS. I think a value 
