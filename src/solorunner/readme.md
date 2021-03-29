@@ -6,6 +6,8 @@
 
 Solutions are saved on files, that can be submitted to Codingame with PHP code. Submittable solutions are at the end of SOLUTION_* files, it starts with a password_level + list of moves. Tested on Ubuntu 18.04 LTS. 
 
+I have a distributed Solver package, with a lot of bells and whistles (centralized config files, ability to change solver code on remote nodes, load new level if a remote node solved it, etc..) I don't think it's really needed with the latest version.
+
 ## Prerrequisites:
 
 - Python 3 (Tested on Python 3.6.9)
