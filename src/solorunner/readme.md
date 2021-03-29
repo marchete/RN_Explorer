@@ -49,7 +49,7 @@ It's an evolved version of the recommended submit.py: https://github.com/eulersc
 
 ## Performance
 
-With an Intel® Core™ i7-8700K it solved levels 200 to 500 in 2hrs 41min (using 8/10 THREADS depending on the time), while I was doing other things in that PC.
+With an Intel® Core™ i7-8700K it solved levels 200 to 500 in 2hrs 41min (using 8/10 THREADS depending on the time), while I was doing other things in that PC. This time is total time, c++ execution time + python3 time (downloading levels and replays, etc).
 
 ## Compiling
 CPP code was tested on CLANG and Visual Studio. It needs these compiler options ```/GS /GL /W3 /Gy- /Zc:wchar_t /Zi /Gm- /Ox /Ob2 /sdl- /Zc:inline /fp:precise /D "NDEBUG" /D "_CONSOLE" /D "_CRT_SECURE_NO_WARNINGS" /D "_UNICODE" /D "UNICODE" /errorReport:prompt /WX- /Zc:forScope /arch:AVX2 /Gd /Oy /Oi /MD /std:c++17 /FC /Fa"x64\Release\" /EHsc /nologo /Fo"x64\Release\" /Ot /diagnostics:classic ```
