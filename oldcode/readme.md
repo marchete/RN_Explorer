@@ -1,4 +1,4 @@
-This was the original code I used to solve levels 800 to 1000. There were many iterations before version. "NS_Strings_v16d_6.cpp" is the 16th version and "d" revision of Number Shift "Strings" branch. Yes, I had a loooot of different iterations of the code.
+This was the original code I used to solve levels 800 to 1000. There were many iterations before this final version. "NS_Strings_v16d_6.cpp" is the 16th version and "d" revision of Number Shift "Strings" branch. Yes, I had a loooot of different iterations of the code.
 
 The cleaned code "RN_ExploDiv_7.cpp" should perform similarly to this code, and it has some additional bugfixes. On tests with level 1000 and level 200 to 600 it performed well.
 
