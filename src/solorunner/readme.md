@@ -40,3 +40,7 @@ It's an evolved version of the recommended submit.py: https://github.com/eulersc
 - On solver crashes (due to bugs on the code) it tries to recover the solution from SOLUTION\_*.txt file.
 - It allows a _parameters.txt_ file. Useful when deploying multiples nodes, for changing parameters on the fly.
 - It allows a _runningprocess.txt_ file.  Useful when deploying multiples nodes, for changing the running code on the fly.
+
+## Performance
+
+With an Intel® Core™ i7-8700K it solved levels 200 to 500 in 2hrs 41min (using 8/10 THREADS depending on the time), while I was doing other things in that PC.
