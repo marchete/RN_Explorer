@@ -72,7 +72,7 @@ RN\_Explore solver is based on a heavily modified LAHC Solver (Late Acceptance H
 ##### Basic steps of the Solver:
 
 0. Read initial data, create N thread Workers for the LAHC algorithm
-1. Create a new candidate solution, based on a previous accepted APX, changing little things (removing a number, truncating list of numbers, etc)
+1. Create a new candidate solution, based on a previous accepted approximation (for short, **APX**), changing little things (removing a number, truncating list of numbers, etc)
 2. Score it, based on some objective. I picked reducing both numbers in the grid and total sum of these numbers
 3. Based on the LAHC algorithm, accept it as a new accepted APX or discard it.
 4. Save candidate on GLOBAL_RN.APX pool if it was a good APX.  This is unrelated to point 3.
