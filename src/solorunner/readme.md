@@ -1,6 +1,7 @@
 # Single CPU Solver for Number Shifting.
 
 ***The code is INTENTIONALLY broken, it won't compile right out of the box. You need to fix the marked TODO's, if you know some C++ it can be done in less than 5 minutes***
+
 ***This code is not for running on Codingame directly, but for using it locally***
 
 Solutions are saved on files, that can be submitted to Codingame with PHP code. Submittable solutions are at the end of SOLUTION_* files, it starts with a password_level + list of moves. Tested on Ubuntu 18.04 LTS. 
