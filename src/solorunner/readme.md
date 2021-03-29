@@ -1,5 +1,6 @@
 # Single CPU Solver for Number Shifting.
 
+***The code is INTENTIONALLY broken, it won't compile right out of the box. You need to fix the marked TODO's, if you know some C++ it can be done in less than 5 minutes***
 ***This code is not for running on Codingame directly, but for using it locally***
 
 Solutions are saved on files, that can be submitted to Codingame with PHP code. Submittable solutions are at the end of SOLUTION_* files, it starts with a password_level + list of moves. Tested on Ubuntu 18.04 LTS. 
@@ -20,7 +21,7 @@ python3 submit.py RN_ExploDiv_7 <THREADS> <LAHC_TIME_LIMIT> <LFA_SIZE> <K_A> <K_
 - <LAHC_TIME_LIMIT>: Max time in seconds for LAHC Search. When it's timeout the thread resets and restart.
 - <LFA_SIZE>:
 - <K_A>: Remaining Numbers score
-- <K_B>: Number of X Rows and Y Rows with numbers. I didn't use it on my final run.
+- <K_B>: Number of X Rows and Y Rows with numbers. I dont't use it on my final run.
 - <K_C>: Remaining Points score
 - <K_D>: Remaining Squared Points score.
 - <INC_TIME>: Increase Search time on milliseconds, after restarts. Like 50ms to allow more time if the level is hard. The code limit the max search time to 70sec.
