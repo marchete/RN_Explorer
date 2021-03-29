@@ -1,6 +1,8 @@
 # Single CPU Solver for Number Shifting.
 
-Tested on Ubuntu 18.04 LTS 
+***This code is not for running on Codingame directly, but for using it locally***
+
+Solutions are saved on files, that can be submitted to Codingame with PHP code. Submittable solutions are at the end of SOLUTION_* files, it starts with a password_level + list of moves. Tested on Ubuntu 18.04 LTS. 
 
 ## Prerrequisites:
 
@@ -44,3 +46,6 @@ It's an evolved version of the recommended submit.py: https://github.com/eulersc
 ## Performance
 
 With an Intel® Core™ i7-8700K it solved levels 200 to 500 in 2hrs 41min (using 8/10 THREADS depending on the time), while I was doing other things in that PC.
+
+## Compiling
+CPP code was tested on CLANG and Visual Studio. It needs these compiler options ```/GS /GL /W3 /Gy- /Zc:wchar_t /Zi /Gm- /Ox /Ob2 /sdl- /Zc:inline /fp:precise /D "NDEBUG" /D "_CONSOLE" /D "_CRT_SECURE_NO_WARNINGS" /D "_UNICODE" /D "UNICODE" /errorReport:prompt /WX- /Zc:forScope /arch:AVX2 /Gd /Oy /Oi /MD /std:c++17 /FC /Fa"x64\Release\" /EHsc /nologo /Fo"x64\Release\" /Ot /diagnostics:classic ```
