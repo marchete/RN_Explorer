@@ -171,6 +171,13 @@ Levels 515, 547 and 570 were orders of magnitude harder than others.
 
 Levels above 800 were solved with RN Explore Solver too, but it was in a distributed search with 5 nodes (10 threads + 4x VM with 8vCPU each). Average solving time was below 20minutes per level.
 
+Performance against other solvers
+**Solving time in milliseconds**
+Level | Dancing Links | LAHC | LAHC + RN_Explorer
+------------ | ------------ | ------------- | -------------
+ 225 | 6318000 | 490000 | 435
+ 336 | Unsolved | 14400000 | 43000
+
 ##### Conclusions
 
 In this document a new approach for Number Shifting puzzle is presented. The proposed RN Explore Algorithm solved all 1000 levels of the puzzle in reasonable time, with a single computer. Solving time is 300 times better than previous approaches.
