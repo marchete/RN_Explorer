@@ -171,7 +171,8 @@ Levels 515, 547 and 570 were orders of magnitude harder than others.
 
 Levels above 800 were solved with RN Explore Solver too, but it was in a distributed search with 5 nodes (10 threads + 4x VM with 8vCPU each). Average solving time was below 20minutes per level.
 
-Performance against other solvers
+Performance against other solvers:
+
 **Solving time in milliseconds**
 Level | Dancing Links | LAHC | LAHC + RN_Explorer
 ------------ | ------------ | ------------- | -------------
