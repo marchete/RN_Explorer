@@ -1,8 +1,6 @@
 # RN_Explorer
 Efficient Solver for Number Shifiting puzzle (https://www.codingame.com/ide/puzzle/number-shifting)
 
-Evolution of https://github.com/marchete/Codingame/blob/master/Optimization/Number%20Shift/NumberShift_LAHC.cpp
-
 About 300x-1000x performance improvement from previous Solvers.
 
 **Solving time in milliseconds**
@@ -15,3 +13,6 @@ Level | Dancing Links | LAHC | LAHC + RN_Explorer
  
  
 See https://github.com/marchete/RN_Explorer/blob/main/Efficient%20Solver%20for%20Number%20Shifiting%20puzzle.md for more info.
+
+It was an evolution of an older code: https://github.com/marchete/Codingame/blob/master/Optimization/Number%20Shift/NumberShift_LAHC.cpp
+This old code doesn't perform that well.
