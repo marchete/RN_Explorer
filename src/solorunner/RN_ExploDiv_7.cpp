@@ -1308,16 +1308,18 @@ struct ALIGN LAHC_Node {
 			B = K_B * (1.0 - (((double)resX)* INV_RESX + ((double)resY)* INV_RESY));
 		}
 		else B = 0.0;
-		//C is remaining points percentage
-		C = K_C * (double)(MAP.totalPoints - grid.totalPoints)* INV_POINTS;
+		//C is remaining totalPoints percentage
+		C = K_C * 0.0; //TODO: (MAP.??? - grid.???) * normalization;
 		//ExtraC is to allow that all numbers <= LIM_P scores the same in C. I think val=1 must score the same as val=3, because on low values it's not true the C scoring.
 		ExtraC = K_C * (double)(MAP.totalPoints - extraPoints)* INV_POINTS - C;
 
-		//D is remaining squared points percentage
-		D = K_D * (double)(MAP.squaredPoints - grid.squaredPoints)*INV_SQUAREPOINTS;
+		//D is remaining squaredPoints points percentage
+		D = K_D *  0.0; //TODO: (MAP.??? - grid.???) * normalization;
 		//Similar idea than ExtraC
 		ExtraD = K_D * (double)(MAP.squaredPoints - extraSQ)*INV_SQUAREPOINTS - D;
-		BestScore = A + B + C + D + max(0.0, ExtraC) + max(0.0, ExtraD);
+		
+		//TODO: This is incorrect
+		BestScore = A*B*C*D + max(0.0, ExtraC) + max(0.0, ExtraD);
 	}
 	LAHC_Node() {}
 
@@ -4227,7 +4229,6 @@ void Worker_LAHC(int ID)
 						for (auto& c : candidate.Movelists)
 						SolvedArray.addPlan(candidate.grid.Plan_NMB[c]);*/
 						cerr << "SOLUTION had " << candidate.Movelists.size() << " GROUPS" << endl;
-						//TODO candidate.SaveApprox(filename);
 					}
 					else {
 						cerr << "UPS! Wrong solution! Numbers:" << candidate.grid.totalNumbers << "<->" << checkSol.grid.totalNumbers << " Points" << candidate.grid.totalPoints << "<->" << checkSol.grid.totalPoints << endl;
@@ -4586,10 +4587,7 @@ void ParallelWork() {
 	if (!solved)
 	{
 		cerr << "Creating " << THREADS << " Threads" << endl;
-		for (int i = 0; i < max(1, THREADS); i++)
-		{
-			threads[i] = thread(Worker_LAHC, i);
-		}
+		//TODO: Create threads of type Worker_LAHC, with an ID starting at 0
 	}
 
 	int C = 0;
